@@ -19,7 +19,7 @@ const Home = () => {
       <About />
       <Projects />
       <Skills />
-      <Experience />
+      {/* <Experience /> */}
       <Contact />
     </motion.div>
   );
