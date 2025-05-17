@@ -43,7 +43,7 @@ const config = {
   seo: {
     title: "Muhammad Suleman Faisal | Portfolio",
     description: "Personal portfolio website of Muhammad Suleman Faisal, student at NUST, Islamabad.",
-    ogImage: "https://yourwebsite.com/og-image.png",
+    ogImage: "https://mhmmdslmnfslnust.vercel.app/og-image.png",
     keywords: "student, developer, water drinking, NUST, Islamabad, portfolio"
   },
   
