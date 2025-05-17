@@ -4,7 +4,10 @@ export const projects = [
     title: "E-Commerce Website",
     description: "A full-featured e-commerce platform with product filtering, cart functionality and user authentication.",
     image: "hstore.png",
-    techStack: ["React", "Node.js", "MySQL", "Express", "Redux"],
+    techStack: [
+      "Java", "Spring Boot", "Spring Security", "Spring Data JPA",
+      "Thymeleaf", "Bootstrap", "HTML", "CSS",
+      "H2 Database", "OAuth2", "Lombok"],
     github: "https://github.com/mhmmdslmnfslnust/OOP_PROJECT",
     demo: "https://ecommerce-demo.example.com",
     category: "web"
