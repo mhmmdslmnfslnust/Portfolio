@@ -13,6 +13,17 @@ export const skills = [
     ]
   },
   {
+    category: "Extpertise",
+    items: [
+      {
+        name: "Water Drinking",
+        icon: "water",
+        level: 99, // Very high level (percentage)
+        description: "Expert in drinking water"
+      }
+    ]
+  },
+  {
     category: "Currently Learning",
     items: [
       {
@@ -58,7 +69,13 @@ export const skills = [
       {
         name: "Urdu",
         icon: "language",
-        level: 95,
+        level: 90,
+        description: "Native language"
+      },
+      {
+        name: "Punjabi",
+        icon: "language",
+        level: 90,
         description: "Native language"
       }
     ]
