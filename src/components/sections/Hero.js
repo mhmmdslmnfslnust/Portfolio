@@ -153,7 +153,7 @@ const Hero = () => {
             variants={itemVariants}
           >
             <p className="text-gray-600 dark:text-gray-300 mb-4">Based in {config.location}</p>
-            <p className="text-md mb-6">Passionate about technology and learning new skills.</p>
+            <p className="text-md mb-6">Passionate about technology and learning new skills (about drinking water).</p>
             
             <div className="flex justify-center space-x-4">
               {Object.entries(config.socialMedia).map(([platform, url]) => (
