@@ -17,6 +17,7 @@ const config = {
     whatsapp: "https://wa.me/923497548311",
     gmail: "mailto:sulemanmuhammed493@gmail.com",
     hackerrank: "https://https://www.hackerrank.com/profile/sulemanmuhammed1/",
+    wakatime: "https://wakatime.com/@mhmmdslmnfslnust",
   },
   
   // About Section

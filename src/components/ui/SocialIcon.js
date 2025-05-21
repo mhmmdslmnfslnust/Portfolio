@@ -14,6 +14,8 @@ const SocialIcon = ({ platform }) => {
       return <img src="https://img.icons8.com/color/48/gmail-new.png" alt="Gmail" width="24" />;
     case 'hackerrank':
       return <img src="https://cdn.worldvectorlogo.com/logos/hackerrank.svg" alt="HackerRank Logo" width="30" />;
+    case 'wakatime':
+      return <img src="https://cdn.worldvectorlogo.com/logos/wakatime.svg" alt="WakaTime Logo" width="24" />;
     default:
       return null;
   }
