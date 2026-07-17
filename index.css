@@ -1,0 +1,96 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* 1. Setup the page scroll */
+body {
+  margin: 0;
+  height: 400vh; /* Make the page 4 times taller than the screen to allow scrolling */
+  animation: change-bg linear;
+  animation-timeline: scroll(root block);
+}
+
+/* 2. Animate the background colors */
+@keyframes change-bg {
+  0% {
+    background-color: color-mix(in srgb, #00ff00 60%, white);
+  }
+  33% {
+    background-color: color-mix(in srgb, #73ff00 60%, white);
+  }
+  66% {
+    background-color: color-mix(in srgb, #ddff00 60%, white);
+  }
+  100% {
+    background-color: color-mix(in srgb, #ffd000 60%, white);
+  }
+}
+
+/* 3. Position the wheel on the left edge */
+.ship-wheel {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 250px; /* Adjust size to fit your design */
+  height: 250px;
+  transform: translate(-50%, -50%);
+
+  /* Link your PNG image here */
+  background-image: url("Ship-wheel-Illustration-on-transparent-background-PNG.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: rotate-wheel linear;
+  animation-timeline: scroll(root block);
+}
+
+/* 5. Make the wheel do a full 360 spin as the user scrolls */
+@keyframes rotate-wheel {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.ship-wheel2 {
+  position: fixed;
+  top: 50%;
+  right: -250px;
+  width: 250px; /* Adjust size to fit your design */
+  height: 250px;
+  transform: translate(-50%, -50%);
+
+  /* Link your PNG image here */
+  background-image: url("Ship-wheel-Illustration-on-transparent-background-PNG.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: rotate-wheel linear reverse;
+  animation-timeline: scroll(root block);
+}
+
+.project-card {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-card.card-hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.filter-btn.filter-active {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.glass-ready {
+  /* hook for future glassmorphism / dark-mode CSS */
+}

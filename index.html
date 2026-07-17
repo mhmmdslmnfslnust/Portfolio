@@ -23,36 +23,15 @@
       },
     };
   </script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    .project-card {
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-    .project-card.card-hidden {
-      opacity: 0;
-      transform: translateY(8px);
-      pointer-events: none;
-      position: absolute;
-      visibility: hidden;
-    }
-
-    .filter-btn.filter-active {
-      background-color: #4f46e5;
-      color: #ffffff;
-    }
-
-    .glass-ready {
-      /* hook for future glassmorphism / dark-mode CSS */
-    }
-  </style>
+  <link rel="stylesheet" href="index.css" class="css">
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
+  <div class="scroll-container">
+      <div class="ship-wheel"></div>
+      <div class="ship-wheel2"></div>
+  </div>
   <!-- ── HEADER ── -->
   <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm glass-ready">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
