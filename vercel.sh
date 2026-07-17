@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$VERCEL_GIT_COMMIT_REF" == "your-simple-branch-name" ]; then
+if [ "$VERCEL_GIT_COMMIT_REF" == "wheel-background" ]; then
   # For your simple branch: Do nothing because it is just a static HTML file
   echo "Simple branch detected. Skipping build step."
   exit 0
