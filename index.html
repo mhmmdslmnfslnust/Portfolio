@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Suleman Faisal — Software Engineering Portfolio</title>
+  <meta name="description"
+    content="Personal portfolio of a Software Engineering student specialising in QA automation and algorithmic problem-solving." />
+  <meta name="author" content="Muhammad Suleman Faisal" />
+  <meta property="og:title" content="Muhammad Suleman Faisal — Portfolio" />
+  <meta property="og:description" content="QA automation · algorithmic problem-solving · frontend development" />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .project-card {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .project-card.card-hidden {
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .filter-btn.filter-active {
+      background-color: #4f46e5;
+      color: #ffffff;
+    }
+
+    .glass-ready {
+      /* hook for future glassmorphism / dark-mode CSS */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- ── HEADER ── -->
+  <header class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm glass-ready">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="text-lg font-bold text-gray-900 tracking-tight hover:text-indigo-600 transition-colors">
+        MSF<span class="text-indigo-600">.</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="hidden sm:flex gap-6 text-sm font-medium text-gray-600">
+          <li><a href="#projects" class="hover:text-indigo-600 transition-colors">Projects</a></li>
+          <li><a href="#about" class="hover:text-indigo-600 transition-colors">About</a></li>
+          <li><a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="sm:hidden text-sm font-medium text-indigo-600 hover:underline">Contact &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO (FR-1) ── -->
+    <section id="hero"
+      class="max-w-5xl mx-auto px-6 py-24 sm:py-32 flex flex-col sm:flex-row items-center gap-10 sm:gap-16">
+      <div class="flex-shrink-0">
+        <img src="public/profile-image.jpgbroken" alt="Portrait of Muhammad Suleman Faisal" width="160" height="160"
+          class="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-4 border-indigo-100 shadow-md" />
+      </div>
+      <div>
+        <!-- EDIT: your name -->
+        <h1 class="text-3xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+          Hi, I&rsquo;m <span class="text-indigo-600">Muhammad Suleman.</span>
+        </h1>
+        <h2 class="mt-3 text-lg sm:text-xl font-medium text-gray-500">
+          Software Engineering Student &amp; Builder
+        </h2>
+        <!-- EDIT: short bio -->
+        <p class="mt-5 max-w-xl text-gray-600 leading-relaxed">
+          I love logic, mathematics, and <em>breaking things</em> &mdash; which makes
+          QA automation feel less like a job and more like a puzzle.
+          I build tools that are fast, honest, and occasionally chaotic
+          (in the chaos-theory sense of the word).
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#projects"
+            class="inline-block bg-indigo-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg
+                    hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            View My Work
+          </a>
+          <a href="#contact" class="inline-block border border-gray-300 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-lg
+                    hover:border-indigo-400 hover:text-indigo-600 transition-colors
+                    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS (FR-2) ── -->
+    <section id="projects" class="bg-white border-y border-gray-200 glass-ready">
+      <div class="max-w-5xl mx-auto px-6 py-16 sm:py-20">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Projects</h2>
+        <p class="mt-2 text-gray-500 text-sm">Honest labels &mdash; because every project deserves its real category.
+        </p>
+
+        <!-- Filter buttons -->
+        <div id="filter-group" role="group" aria-label="Project category filters" class="mt-8 flex flex-wrap gap-3">
+          <button data-filter="all" class="filter-btn filter-active text-sm font-medium px-4 py-2 rounded-full border border-indigo-600
+                         transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            Show All
+          </button>
+          <button data-filter="serious" class="filter-btn text-sm font-medium px-4 py-2 rounded-full border border-gray-300 text-gray-600
+                         hover:border-indigo-400 hover:text-indigo-600 transition-colors
+                         focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            Serious
+          </button>
+          <button data-filter="for-fun" class="filter-btn text-sm font-medium px-4 py-2 rounded-full border border-gray-300 text-gray-600
+                         hover:border-indigo-400 hover:text-indigo-600 transition-colors
+                         focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            For Fun
+          </button>
+          <button data-filter="incomplete" class="filter-btn text-sm font-medium px-4 py-2 rounded-full border border-gray-300 text-gray-600
+                         hover:border-indigo-400 hover:text-indigo-600 transition-colors
+                         focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            Incomplete
+          </button>
+        </div>
+
+        <!-- Cards grid: 1-col mobile, 2-col sm, 3-col lg -->
+        <div id="projects-grid" class="mt-8 relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Card: Artsy-Hypo (For Fun) -->
+          <article data-tag="for-fun" class="project-card bg-gray-50 border border-gray-200 rounded-xl p-6 flex flex-col gap-4
+                          hover:shadow-md hover:border-indigo-200 transition-all duration-200">
+            <span
+              class="self-start text-xs font-semibold uppercase tracking-wide bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full">For
+              Fun</span>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Artsy-Hypo</h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Chaos-theory generative line art visualizer. Feed it a seed and watch mathematics draw something
+                unexpected.
+              </p>
+            </div>
+            <!-- EDIT: href to your repo or demo -->
+            <a href="#"
+              class="mt-auto text-sm font-medium text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+              View project &rarr;
+            </a>
+          </article>
+
+          <!-- Card: wplace.live Pixel Tool (For Fun) -->
+          <article data-tag="for-fun" class="project-card bg-gray-50 border border-gray-200 rounded-xl p-6 flex flex-col gap-4
+                          hover:shadow-md hover:border-indigo-200 transition-all duration-200">
+            <span
+              class="self-start text-xs font-semibold uppercase tracking-wide bg-purple-100 text-purple-700 px-2.5 py-1 rounded-full">For
+              Fun</span>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">wplace.live Pixel Tool</h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Color-matrix mapping web application for collaborative pixel canvas workflows. Built around a live data
+                feed.
+              </p>
+            </div>
+            <a href="#"
+              class="mt-auto text-sm font-medium text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+              View project &rarr;
+            </a>
+          </article>
+
+          <!-- Card: Gamified Habit Tracker (Serious) -->
+          <article data-tag="serious" class="project-card bg-gray-50 border border-gray-200 rounded-xl p-6 flex flex-col gap-4
+                          hover:shadow-md hover:border-indigo-200 transition-all duration-200">
+            <span
+              class="self-start text-xs font-semibold uppercase tracking-wide bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full">Serious</span>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Gamified Habit Tracker</h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Large-scale habit-tracking application with XP, streaks, and daily quest systems. Designed for long-term
+                behavior change.
+              </p>
+            </div>
+            <a href="#"
+              class="mt-auto text-sm font-medium text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+              View project &rarr;
+            </a>
+          </article>
+
+          <!-- Card: Unique Summands Minimizer (Serious) -->
+          <article data-tag="serious" class="project-card bg-gray-50 border border-gray-200 rounded-xl p-6 flex flex-col gap-4
+                          hover:shadow-md hover:border-indigo-200 transition-all duration-200">
+            <span
+              class="self-start text-xs font-semibold uppercase tracking-wide bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full">Serious</span>
+            <div>
+              <h3 class="text-lg font-bold text-gray-900">Unique Summands Minimizer</h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                Algorithmic math tool that computes the minimum number of distinct positive integers summing to a target
+                &mdash; greedy &amp; optimised for edge cases.
+              </p>
+            </div>
+            <a href="#"
+              class="mt-auto text-sm font-medium text-indigo-600 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded">
+              View project &rarr;
+            </a>
+          </article>
+
+        </div><!-- /#projects-grid -->
+      </div>
+    </section>
+
+    <!-- ── ABOUT & TOOLKIT (FR-3) ── -->
+    <section id="about" class="max-w-5xl mx-auto px-6 py-16 sm:py-20">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">About &amp; Toolkit</h2>
+      <p class="mt-2 text-gray-500 text-sm max-w-2xl">Two disciplines, one person. Here&rsquo;s what I actually know how
+        to do.</p>
+
+      <!-- Two-column grid -->
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+        <!-- QA & Automation -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 glass-ready">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="text-2xl" aria-hidden="true">🔍</span>
+            <h3 class="text-base font-bold text-gray-900 uppercase tracking-wide">QA &amp; Automation</h3>
+          </div>
+          <!-- EDIT: add / remove skills -->
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>Playwright</strong> &mdash; end-to-end browser
+                automation</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>Selenium</strong> &mdash; cross-browser test
+                scripting</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>PyTest</strong> &mdash; Python test framework &amp;
+                fixtures</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>Cypress</strong> &mdash; component &amp; integration
+                testing</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>Manual Feature Testing</strong> &mdash; exploratory &amp;
+                regression</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>Bug Reporting</strong> &mdash; structured, reproducible
+                write-ups</span></li>
+          </ul>
+        </div>
+
+        <!-- Development & Tools -->
+        <div class="bg-white border border-gray-200 rounded-xl p-6 glass-ready">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="text-2xl" aria-hidden="true">⚙️</span>
+            <h3 class="text-base font-bold text-gray-900 uppercase tracking-wide">Development &amp; Tools</h3>
+          </div>
+          <!-- EDIT: add / remove skills -->
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>Frontend Web Development</strong> &mdash; HTML, CSS,
+                responsive layout</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>JavaScript (ES6+)</strong> &mdash; DOM, async,
+                modules</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>TypeScript</strong> &mdash; typed JS for larger
+                codebases</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>VS Code</strong> &mdash; primary editor with custom
+                keybindings</span></li>
+            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5"
+                aria-hidden="true">&#9656;</span><span><strong>AI-Assisted Prototyping</strong> &mdash; rapid iteration
+                with LLMs</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT (FR-4) ── -->
+    <section id="contact" class="bg-white border-t border-gray-200 glass-ready">
+      <div class="max-w-2xl mx-auto px-6 py-16 sm:py-20">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Get In Touch</h2>
+        <p class="mt-2 text-gray-500 text-sm">
+          Have a project in mind, a bug to investigate, or just want to talk algorithms? Send me a message.
+        </p>
+
+        <!--
+          EDIT: replace action="#" with your real endpoint.
+          Formspree: action="https://formspree.io/f/YOUR_ID"
+          Netlify  : add netlify attribute, action="/thanks"
+        -->
+        <form id="contact-form" action="#" method="POST" novalidate class="mt-8 flex flex-col gap-5"
+          aria-label="Contact form">
+          <div>
+            <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1.5">Name</label>
+            <input id="contact-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith"
+              class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg bg-gray-50 placeholder-gray-400
+                          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" />
+          </div>
+          <div>
+            <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
+            <input id="contact-email" name="email" type="email" required autocomplete="email"
+              placeholder="jane@example.com" class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg bg-gray-50 placeholder-gray-400
+                          focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" />
+          </div>
+          <div>
+            <label for="contact-message" class="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+            <textarea id="contact-message" name="message" required rows="5" placeholder="What's on your mind?"
+              class="w-full px-4 py-2.5 text-sm border border-gray-300 rounded-lg bg-gray-50 placeholder-gray-400 resize-y
+                             focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"></textarea>
+          </div>
+          <button id="contact-submit" type="submit" class="self-start bg-indigo-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg
+                         hover:bg-indigo-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500
+                         focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            Send Message
+          </button>
+          <!-- Populated by JS after submit -->
+          <p id="form-status" class="text-sm" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="border-t border-gray-200 bg-gray-50">
+    <div
+      class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <!-- EDIT: your name -->
+      <p>&copy; <span id="footer-year"></span> Muhammad Suleman Faisal</p>
+      <nav aria-label="Social links">
+        <ul class="flex gap-5">
+          <!-- EDIT: replace href="#" with your real URLs -->
+          <li><a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-indigo-600 transition-colors">GitHub</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-indigo-600 transition-colors">LinkedIn</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer"
+              class="hover:text-indigo-600 transition-colors">Twitter / X</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ── JAVASCRIPT ── -->
+  <script>
+    /*
+      ============================================================
+      PROJECT FILTER (FR-2)
+      ============================================================
+      How it works:
+      1. Every filter button has data-filter="all|serious|for-fun|incomplete"
+      2. Every project card has data-tag="serious|for-fun|incomplete"
+      3. On click: compare data-filter with data-tag; toggle .card-hidden
+    */
+
+    /**
+     * filterProjects - show/hide cards based on the selected category.
+     * @param {string} selectedFilter - value from the clicked button's data-filter
+     */
+    function filterProjects(selectedFilter) {
+      const cards = document.querySelectorAll('#projects-grid .project-card');
+      cards.forEach(function (card) {
+        const cardTag = card.dataset.tag;
+        const shouldShow = selectedFilter === 'all' || cardTag === selectedFilter;
+        card.classList.toggle('card-hidden', !shouldShow);
+      });
+    }
+
+    /**
+     * initProjectFilters - wire up click listeners and show all cards on load.
+     */
+    function initProjectFilters() {
+      const filterGroup = document.getElementById('filter-group');
+      const filterButtons = filterGroup.querySelectorAll('.filter-btn');
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          // Remove active state from all buttons
+          filterButtons.forEach(function (btn) { btn.classList.remove('filter-active'); });
+          // Mark this button active
+          button.classList.add('filter-active');
+          // Apply filter
+          filterProjects(button.dataset.filter);
+        });
+      });
+
+      // Default: show all cards
+      filterProjects('all');
+    }
+
+    initProjectFilters();
+
+
+    /*
+      ============================================================
+      CONTACT FORM (FR-4)
+      ============================================================
+      Shows a placeholder success message until a real backend is wired in.
+      To use a real backend: remove event.preventDefault() and let the form
+      submit normally, OR replace the timeout with a fetch() call.
+    */
+
+    function initContactForm() {
+      const form = document.getElementById('contact-form');
+      const statusEl = document.getElementById('form-status');
+      const submitBtn = document.getElementById('contact-submit');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // REMOVE this line once you have a real endpoint
+
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+
+        // Disable to prevent double-submit
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending\u2026';
+
+        // Simulate round-trip (swap for fetch() when ready)
+        setTimeout(function () {
+          statusEl.textContent = '\u2713 Message received! I\u2019ll get back to you soon.';
+          statusEl.className = 'text-sm text-green-600';
+          form.reset();
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }, 800);
+      });
+    }
+
+    initContactForm();
+
+
+    /*
+      ============================================================
+      FOOTER YEAR — auto-updates so you never have to touch it
+    */
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+
+</html>
