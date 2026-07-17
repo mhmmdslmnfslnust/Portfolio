@@ -45,7 +45,7 @@ body {
 .ship-wheel2 {
   position: fixed;
   top: 50%;
-  right: -250px;
+  right: 0;
   width: 250px; /* Adjust size to fit your design */
   height: 250px;
   transform: translate(-50%, -50%);

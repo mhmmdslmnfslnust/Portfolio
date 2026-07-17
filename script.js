@@ -7,7 +7,7 @@ function updateWheelRotation() {
         const radius = wheel.offsetWidth / 2;
         const circumference = 2 * Math.PI * radius;
 
-        const angle = (scrollY / circumference) * 360;
+        const angle = (scrollY / circumference) * -360;
 
         if (wheel.classList.contains("ship-wheel2")) {
             wheel.style.transform = `translate(50%, -50%) rotate(${-angle}deg)`;
