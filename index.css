@@ -28,6 +28,7 @@ body {
 
 /* 3. Position the wheel on the left edge */
 .ship-wheel {
+  opacity: 0.5; /* Adjust opacity as needed */
   position: fixed;
   top: 50%;
   left: 0;
@@ -43,6 +44,7 @@ body {
 }
 
 .ship-wheel2 {
+  opacity: 0.5; /* Adjust opacity as needed */
   position: fixed;
   top: 50%;
   right: 0;
@@ -78,4 +80,17 @@ body {
 
 .glass-ready {
   /* hook for future glassmorphism / dark-mode CSS */
+}
+
+
+/* -----------------------------------------------------------------------
+-----------------------------------------------------------------------
+Mobile Phone
+-----------------------------------------------------------------------
+----------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .ship-wheel,
+    .ship-wheel2 {
+        display: none;
+    }
 }
