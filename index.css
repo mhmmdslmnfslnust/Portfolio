@@ -40,20 +40,8 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
-  animation: rotate-wheel linear;
-  animation-timeline: scroll(root block);
 }
 
-/* 5. Make the wheel do a full 360 spin as the user scrolls */
-@keyframes rotate-wheel {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
 .ship-wheel2 {
   position: fixed;
   top: 50%;
@@ -67,9 +55,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
-  animation: rotate-wheel linear reverse;
-  animation-timeline: scroll(root block);
 }
 
 .project-card {
