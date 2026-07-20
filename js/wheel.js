@@ -1,18 +1,15 @@
 const wheels = document.querySelectorAll(".ship-wheel, .ship-wheel2");
 
 function updateWheelRotation() {
-    const scrollY = window.scrollY;
+    const angle = window.getRotationAngle();
 
     wheels.forEach((wheel) => {
-        const radius = wheel.offsetWidth / 2;
-        const circumference = 2 * Math.PI * radius;
-
-        const angle = (scrollY / circumference) * -360;
-
         if (wheel.classList.contains("ship-wheel2")) {
-            wheel.style.transform = `translate(50%, -50%) rotate(${-angle}deg)`;
+            wheel.style.transform =
+                `translate(50%, -50%) rotate(${-angle}deg)`;
         } else {
-            wheel.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+            wheel.style.transform =
+                `translate(-50%, -50%) rotate(${angle}deg)`;
         }
     });
 }
