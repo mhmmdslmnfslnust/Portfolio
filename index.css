@@ -10,7 +10,7 @@ body {
   animation-timeline: scroll(root block);
 }
 
-/* 2. Animate the background colors */
+/* 2. Animate the background colors
 @keyframes change-bg {
   0% {
     background-color: color-mix(in srgb, #00ff00 60%, white);
@@ -24,7 +24,7 @@ body {
   100% {
     background-color: color-mix(in srgb, #ffd000 60%, white);
   }
-}
+} */
 
 /* 3. Position the wheel on the left edge */
 .ship-wheel {
@@ -110,7 +110,8 @@ body{
 
 .fan{
     position:fixed;
-    opacity:.2;
+    opacity:.1;
+    z-index:-1;
 
     left:-190vh;
     top:50%;
@@ -122,12 +123,12 @@ body{
 
     background:
         conic-gradient(
-            #59ff6c 0deg 60deg,
-            #c4ff3a 60deg 120deg,
+            #e6ff59 0deg 60deg,
+            #fff53a 60deg 120deg,
             #c1c926 120deg 180deg,
-            #c4a219 180deg 240deg,
-            #93754c 240deg 300deg,
-            #ff924c 300deg 360deg
+            #b9c419 180deg 240deg,
+            #88934c 240deg 300deg,
+            #ffe74c 300deg 360deg
         );
 
     overflow:hidden;
