@@ -106,12 +106,12 @@ body {
 
     background:
         conic-gradient(
-            #e6ff59 0deg 60deg,
-            #fff53a 60deg 120deg,
-            #c1c926 120deg 180deg,
-            #b9c419 180deg 240deg,
-            #88934c 240deg 300deg,
-            #ffe74c 300deg 360deg
+            #535b21 0deg 60deg,
+            #565313 60deg 120deg,
+            #5b5f12 120deg 180deg,
+            #565c0c 180deg 240deg,
+            #4a5124 240deg 300deg,
+            #5e551c 300deg 360deg
         );
 
     overflow:hidden;
