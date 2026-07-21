@@ -16,22 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. Animate the background colors
-@keyframes change-bg {
-  0% {
-    background-color: color-mix(in srgb, #00ff00 60%, white);
-  }
-  33% {
-    background-color: color-mix(in srgb, #73ff00 60%, white);
-  }
-  66% {
-    background-color: color-mix(in srgb, #ddff00 60%, white);
-  }
-  100% {
-    background-color: color-mix(in srgb, #ffd000 60%, white);
-  }
-} */
-
 /* 3. Position the wheel on the left edge */
 .ship-wheel {
   opacity: 0.5; /* Adjust opacity as needed */
