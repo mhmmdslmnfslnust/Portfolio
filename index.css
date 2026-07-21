@@ -43,7 +43,7 @@ body {
   transform: translate(-50%, -50%);
 
   /* Link your PNG image here */
-  background-image: url("Ship-wheel-Illustration-on-transparent-background-PNG.png");
+  background-image: url("public/Ship-wheel-Illustration-on-transparent-background-PNG.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
