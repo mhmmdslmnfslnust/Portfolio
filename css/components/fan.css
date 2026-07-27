@@ -1,0 +1,30 @@
+/******************************
+ Background Fan
+******************************/
+
+.fan{
+    position:fixed;
+    opacity:0.3;
+    filter: blur(80px);
+    z-index:-1;
+
+    left:-190vh;
+    top:50%;
+
+    width:380vh;
+    height:380vh;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            #0f172a,
+            #164e63,
+            #0f766e,
+            #156d83,
+            #1a306c,
+            #1e293b
+        );
+
+        overflow:hidden;
+    }

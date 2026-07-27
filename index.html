@@ -23,7 +23,7 @@
       },
     };
   </script>
-  <link rel="stylesheet" href="index.css" class="css">
+  <link rel="stylesheet" href="css/main.css" class="css">
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
@@ -335,102 +335,7 @@
   </footer>
 
   <!-- ── JAVASCRIPT ── -->
-  <script>
-    /*
-      ============================================================
-      PROJECT FILTER (FR-2)
-      ============================================================
-      How it works:
-      1. Every filter button has data-filter="all|serious|for-fun|incomplete"
-      2. Every project card has data-tag="serious|for-fun|incomplete"
-      3. On click: compare data-filter with data-tag; toggle .card-hidden
-    */
-
-    /**
-     * filterProjects - show/hide cards based on the selected category.
-     * @param {string} selectedFilter - value from the clicked button's data-filter
-     */
-    function filterProjects(selectedFilter) {
-      const cards = document.querySelectorAll('#projects-grid .project-card');
-      cards.forEach(function (card) {
-        const cardTag = card.dataset.tag;
-        const shouldShow = selectedFilter === 'all' || cardTag === selectedFilter;
-        card.classList.toggle('card-hidden', !shouldShow);
-      });
-    }
-
-    /**
-     * initProjectFilters - wire up click listeners and show all cards on load.
-     */
-    function initProjectFilters() {
-      const filterGroup = document.getElementById('filter-group');
-      const filterButtons = filterGroup.querySelectorAll('.filter-btn');
-
-      filterButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-          // Remove active state from all buttons
-          filterButtons.forEach(function (btn) { btn.classList.remove('filter-active'); });
-          // Mark this button active
-          button.classList.add('filter-active');
-          // Apply filter
-          filterProjects(button.dataset.filter);
-        });
-      });
-
-      // Default: show all cards
-      filterProjects('all');
-    }
-
-    initProjectFilters();
-
-
-    /*
-      ============================================================
-      CONTACT FORM (FR-4)
-      ============================================================
-      Shows a placeholder success message until a real backend is wired in.
-      To use a real backend: remove event.preventDefault() and let the form
-      submit normally, OR replace the timeout with a fetch() call.
-    */
-
-    function initContactForm() {
-      const form = document.getElementById('contact-form');
-      const statusEl = document.getElementById('form-status');
-      const submitBtn = document.getElementById('contact-submit');
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault(); // REMOVE this line once you have a real endpoint
-
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-
-        // Disable to prevent double-submit
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending\u2026';
-
-        // Simulate round-trip (swap for fetch() when ready)
-        setTimeout(function () {
-          statusEl.textContent = '\u2713 Message received! I\u2019ll get back to you soon.';
-          statusEl.className = 'text-sm text-green-600';
-          form.reset();
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-        }, 800);
-      });
-    }
-
-    initContactForm();
-
-
-    /*
-      ============================================================
-      FOOTER YEAR — auto-updates so you never have to touch it
-    */
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
-  </script>
-  <script src="js/rotation.js"></script>
-  <script src="js/wheel.js"></script>
-  <script src="js/fan.js"></script>
-
+  <script type="module" src="js/main.js"></script>
 </body>
 
 </html>

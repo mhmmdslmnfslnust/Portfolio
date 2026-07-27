@@ -1,0 +1,7 @@
+/* 1. Setup the page scroll */
+body {
+    margin: 0;
+    background: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
