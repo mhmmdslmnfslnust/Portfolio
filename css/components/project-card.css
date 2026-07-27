@@ -1,0 +1,13 @@
+.project-card {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-card.card-hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
